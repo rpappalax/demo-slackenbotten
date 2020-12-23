@@ -7,8 +7,8 @@ on:
 jobs:
   build:
     if: |
-        github.event.label.name == 'worldgifs' && 
-        github.actor == 'pdehaan' 
+        github.event.label.name == 'worldgifs' &&  
+        github.actor == 'rpappalax' 
     runs-on: ubuntu-latest
 
     steps:
