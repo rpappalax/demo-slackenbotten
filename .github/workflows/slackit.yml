@@ -20,4 +20,4 @@ jobs:
         ISSUE_LINK: 'http://github.com/rpappalax' 
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"${{ SLACK_CHANNEL_ID }}\",\"text\":\"${{ ISSUE_LINK }}\"}'
+        args: '{\"channel\":\"${{env.SLACK_CHANNEL_ID }}\",\"text\":\"${{env.ISSUE_LINK }}\"}'
