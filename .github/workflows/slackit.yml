@@ -7,8 +7,8 @@ on:
 jobs:
   build:
     if: |
-        github.event.label.name == 'worldgifs' &&  
-        github.actor == 'rpappalax' 
+        github.event.label.name == 'eng:ui-test' ||
+        github.event.label.name == 'eng:intermittent-test'
     runs-on: ubuntu-latest
 
     steps:
@@ -16,6 +16,8 @@ jobs:
     - name: Notify slack
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+        ISSUE_LINK: 'http://github.com/rpappalax' 
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C4YD9HR2S\",\"text\":\"world gifs label created\"}'
+        args: '{\"channel\":\"${{ SLACK_CHANNEL_ID }}\",\"text\":\"${{ ISSUE_LINK }}\"}'
