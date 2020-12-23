@@ -1,12 +1,12 @@
 name: github actions Demo
 
-on: 
-  push:
-    branches: master
+on:
+  label:
+    types: [created]
 
 jobs:
   build:
-
+    if: ${{ github.event.label.name == 'worldgifs' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -16,4 +16,4 @@ jobs:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
-        args: '{\"channel\":\"C4YD9HR2S\",\"text\":\"Hello world\"}'
+        args: '{\"channel\":\"C4YD9HR2S\",\"text\":\"world gifs label created\"}'
