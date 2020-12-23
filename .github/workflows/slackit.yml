@@ -1,8 +1,8 @@
 name: github actions Demo
 
 on:
-  label:
-    types: [created]
+  issues:
+    types: [labeled]
 
 jobs:
   build:
