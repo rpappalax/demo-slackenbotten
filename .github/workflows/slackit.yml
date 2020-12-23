@@ -6,9 +6,8 @@ on:
 
 jobs:
   build:
-    if: ${{ github.event.label.name == 'worldgifs' }}
     if: |
-    if: github.event.label.name == 'worldgifs' || 
+        github.event.label.name == 'worldgifs' || 
         github.actor == 'pdehaan' 
     runs-on: ubuntu-latest
 
