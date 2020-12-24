@@ -15,8 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Notify slack
       env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         ISSUE_LINK: 'https://github.com/rpappalax/demo-slackenbotten/issues/${{github.event.issue.number}}'
       uses: pullreminders/slack-action@master
       with:
